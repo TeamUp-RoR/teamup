@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :members_limit
       t.string :domain
       t.string :language
+      t.string :image_url
 
       t.timestamps null: false
     end
