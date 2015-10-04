@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Creating projects" do
+feature "Creating projects" do
 	before do
 		visit '/'
 		click_link "New Project"
