@@ -1,0 +1,76 @@
+<%= form_for(@project, html: {class: "form-horizontal"}) do |f| %>
+  <ul>
+    <% @project.errors.full.messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %><!--errors-->
+  </ul>
+
+  <div class="form-group">
+    <%= f.label :name, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :goals, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.text_area :goals, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :features, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.text_area :features, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :members_limit, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.number_field :members_limit, min: 2, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :members_limit, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <%= f.number_field :members_limit, min: 2, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :domain, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+      <!--
+      NEED TO ADD HERE ALL SPOKEN LANGUAGES POSSIBLE
+      -->
+      <%= select_tag(:language, options_for_select(...)) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image_url, class: "col-md-3 control-label" %>
+    <div class="col-md-9">
+    <!--
+      NEED TO WORK ON UPLOAD CONTROLL
+      -->
+      <%= file_field :image_url %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+      <%= f.submit "Create Project", class: "btn btn-primary" %>  
+    </div>
+  </div>
+<% end %><!--form-->
+
