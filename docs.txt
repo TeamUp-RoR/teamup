@@ -1,0 +1,11 @@
+# Project Model
+
+- has_one team (group of users)
+
+- has_one human_language (only one main language per team to avoid chaos; user, however, can have many human_languages, each one of them with a level of proficiency, if necessary)
+
+- has_many technical_sets (this is a many_to_many relationship; project will have many programming languages and programming language will have many projects; they are going to be related by technical_sets and, if a project is deleted, the specific set is also deleted)
+
+- has_many knowledge_sets (same thing, but this would be for projects not related to programming. For instance, a Math project would have many 'area of knowledge' - for lack of better word - [calculus, algebra, geometry])
+
+ 
